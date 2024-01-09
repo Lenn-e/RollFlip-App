@@ -1,0 +1,120 @@
+.coin-flip-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 0 30px 10px rgba(194, 218, 234, 0.2),
+              0 0 50px 20px rgba(194, 218, 234, 0.15),
+              0 0 70px 30px rgba(194, 218, 234, 0.1);
+}
+
+.coin-container {
+    width: 160px; 
+    height: 160px;
+    perspective: 1000px;
+    position: relative;
+}
+
+.coin {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #007BFF, #33C3F0, #007BFF);
+    position: relative;
+    transition: transform 1.5s;
+    will-change: transform;
+}
+
+.side {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem; 
+    border: 2px solid #333;
+}
+
+.front {
+    background-color: #f7d26e;
+}
+
+.back {
+    background-color: #f3c653;
+    transform: rotateY(180deg);
+}
+
+.coin-container.flipped .coin {
+    transform: rotateY(180deg);
+}
+
+.coin-movement {
+    display: inline-block;
+    animation: flipInAir 1.5s;
+}
+
+.winner-announcement {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: rgba(255, 255, 255, 0.954);
+    color: #007BFF;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-shadow: 0px 0px 15px rgb(255, 255, 255);
+    opacity: 0;
+    animation: winnerAnimation 3s ease-in-out infinite;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+@keyframes winnerAnimation {
+    0% {
+      text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700;
+    }
+    25% {
+      text-shadow: 0 0 10px #add8e6, 0 0 20px #add8e6, 0 0 30px #add8e6;
+    }
+    50% {
+      text-shadow: 0 0 15px #ffd700, 0 0 30px #ffd700, 0 0 45px #ffd700;
+    }
+    75% {
+      text-shadow: 0 0 20px #add8e6, 0 0 40px #add8e6, 0 0 60px #add8e6;
+    }
+    100% {
+      text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700;
+    }
+}
+
+@keyframes flipInAir {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-100px) scale(1.5);
+    }
+}
+
+@keyframes prepareFlip {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+  
+  .coin-movement.prepare {
+    animation: prepareFlip 0.5s forwards;
+  }

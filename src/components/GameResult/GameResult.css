@@ -1,0 +1,122 @@
+.players {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.player h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.player {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #777;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 30px 10px rgba(194, 218, 234, 0.2),
+              0 0 50px 20px rgba(194, 218, 234, 0.15),
+              0 0 70px 30px rgba(194, 218, 234, 0.1);
+}
+
+.winner {
+    animation: winnerAnimation 3s ease-in-out infinite;
+    font-weight: bold;
+    color: #777;
+}
+
+.withdraw-button {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: linear-gradient(90deg, #007BFF, #2e8ef4);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.dollar-sign {
+    position: absolute;
+    font-size: 1.8rem;
+    color: #59c2ff;
+    opacity: 0;
+    animation: dollarAnimation 1.2s ease-out forwards;
+}
+  
+@keyframes dollarAnimation {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+}
+
+.withdraw-button:disabled {
+    background-color: #97a0af !important;
+    background: none;
+}
+
+.withdraw-button:hover {
+    background: linear-gradient(90deg, #2e8ef4, #007BFF);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.withdraw-button:disabled:hover {
+    background-color: #97a0af;
+    cursor: default;
+    background: none;
+    box-shadow: none;
+}
+
+.result-withdraw-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.withdraw-awaiting-status {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+@keyframes winnerAnimation {
+    0% {
+      text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700;
+    }
+    25% {
+      text-shadow: 0 0 10px #add8e6, 0 0 20px #add8e6, 0 0 30px #add8e6;
+    }
+    50% {
+      text-shadow: 0 0 15px #ffd700, 0 0 30px #ffd700, 0 0 45px #ffd700;
+    }
+    75% {
+      text-shadow: 0 0 20px #add8e6, 0 0 40px #add8e6, 0 0 60px #add8e6;
+    }
+    100% {
+      text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700;
+    }
+}
+
+@media (max-width: 1400px) {
+    .player {
+        width: 15vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .player {
+        width: 25vw;
+    }
+}
