@@ -28,7 +28,7 @@ function App() {
   const [account, setAccount] = useState(null);
   const [signer, setSigner] = useState(null);
   const [error, setError] = useState(null);
-  const [contractAddress] = useState("0xC8be0CE786b5B1A014dE0A7cA2f40f164B00ba93");
+  const [contractAddress] = useState("0x92c7faeb71693d0660628c39551a76806772ea09");
 
   return (
     <Router>

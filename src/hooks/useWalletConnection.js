@@ -3,7 +3,7 @@ import { BrowserProvider } from 'ethers';
 import { useContext } from 'react';
 import EthereumContext from '../EthereumContext';
 
-const RLFP_CHAIN_ID = '0x67d906';
+const RLFP_CHAIN_ID = '0x63352e';
 
 export const useWalletConnection = (setAccount, setSigner) => {
   const { setError } = useContext(EthereumContext);
