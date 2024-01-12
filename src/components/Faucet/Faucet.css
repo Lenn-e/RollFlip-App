@@ -1,0 +1,16 @@
+.faucet-container {
+    width: 600px;
+    padding: 40px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-radius: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    box-shadow: 0 0 30px 10px rgba(194, 218, 234, 0.2),
+                0 0 50px 20px rgba(194, 218, 234, 0.15),
+                0 0 70px 30px rgba(194, 218, 234, 0.1);
+}
+  

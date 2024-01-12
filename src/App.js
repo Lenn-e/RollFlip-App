@@ -7,6 +7,7 @@ import Frame from './components/Frame/Frame';
 import Bet from './components/Bet/Bet';
 import AcceptBet from './components/AcceptBet/AcceptBet';
 import GameResult from './components/GameResult/GameResult';
+import Faucet from './components/Faucet/Faucet';
 import EthereumContext from './EthereumContext';
 import './App.css';
 
@@ -41,6 +42,7 @@ function App() {
               <Route path="/" element={<Bet />} />
               <Route path="/room/:gameId" element={<AcceptBet />} />
               <Route path="/game-result/:gameId" element={<GameResult />} />
+              <Route path="/faucet" element={<Faucet />} />
             </Routes>
           </Frame>
           <Footer /> 
