@@ -26,12 +26,17 @@ function Faucet() {
             });
 
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+                if(response.status == 429) {
+                    setStatus("Request limit reached. Please try again later.");
+                } else {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+            } else {
+                setStatus("Success!");
             }
 
             const data = await response.json();
             console.log('Response:', data);
-            setStatus("Success!");
         } catch (error) {
             console.error('Error requesting faucet:', error);
             setStatus("Error requesting faucet");

@@ -20,8 +20,8 @@
 
 /* Styling for the Faucet button */
 .footer .faucet {
-    background-color: #ffd737; /* Bright color for visibility */
-    color: #626262; /* Contrast color for text */
+    background-color: #b4d6ec; /* Bright color for visibility */
+    color: #3d3d3d; /* Contrast color for text */
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -31,7 +31,7 @@
 }
 
 .footer .faucet:hover {
-    background-color: #fce27d; /* Slightly lighter color on hover */
+    background-color: #d0e2ef; /* Slightly lighter color on hover */
     transform: scale(1.05); /* Slight increase in size on hover */
 }
 
