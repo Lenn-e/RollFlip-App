@@ -5,17 +5,38 @@
     justify-content: space-between;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 30px; /* Increased padding for better spacing */
     position: relative;
     bottom: 0;
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
+}
 
 .footer p {
     margin-left: 15px;
+}
+
+/* Styling for the Faucet button */
+.footer .faucet {
+    background-color: #ffd737; /* Bright color for visibility */
+    color: #626262; /* Contrast color for text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+.footer .faucet:hover {
+    background-color: #fce27d; /* Slightly lighter color on hover */
+    transform: scale(1.05); /* Slight increase in size on hover */
+}
+
+.footer .faucet:focus {
+    outline: none; /* Removes the default focus outline */
 }
 
 .footer a {
@@ -27,4 +48,3 @@
 .footer a:hover {
     text-decoration: underline;
 }
-  
